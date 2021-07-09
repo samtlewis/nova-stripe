@@ -2236,7 +2236,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
 
 // exports
 
@@ -2250,6 +2250,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ChargesPaginationLinks_vue__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ChargesPaginationLinks_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ChargesPaginationLinks_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_moneyFormat__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2620,6 +2626,18 @@ var render = function() {
                           { staticClass: "inline-flex items-center" },
                           [
                             _vm._v(
+                              "\n                     Customer\n                  "
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c(
+                          "span",
+                          { staticClass: "inline-flex items-center" },
+                          [
+                            _vm._v(
                               "\n                     Amount\n                  "
                             )
                           ]
@@ -2658,6 +2676,8 @@ var render = function() {
                     return _c("tbody", [
                       _c("tr", [
                         _c("td", [_vm._v(_vm._s(charge.id))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(charge.customer))]),
                         _vm._v(" "),
                         _c("td", [
                           _vm._v(
@@ -2917,6 +2937,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['chargeId'],
@@ -2935,6 +2978,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         amount: function amount() {
             return this.formatMoney(this.charge.amount, this.charge.currency);
+        },
+        chargeLink: function chargeLink() {
+            return '<a href="https://dashboard.stripe.com/' + (this.charge.livemode ? '' : 'test/') + 'payments/' + this.charge.payment_intent + '" target="_blank">' + this.charge.id + '</a>';
         },
         fee: function fee() {
             if (!this.charge.balance_transaction) {
@@ -2988,9 +3034,97 @@ var render = function() {
     "loading-card",
     { staticClass: "mb-6 py-3 px-6", attrs: { loading: _vm.initialLoading } },
     [
-      _c("detail-text-field", {
-        attrs: { field: { name: "ID", value: _vm.charge.id } }
-      }),
+      _c("div", { staticClass: "flex border-b border-40 -mx-6 px-6" }, [
+        _c("div", { staticClass: "w-1/4 py-4" }, [
+          _c("h4", { staticClass: "font-normal text-80" }, [_vm._v("Payment")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-3/4 py-4 break-words" }, [
+          _c("p", { staticClass: "text-90" }, [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href:
+                    "https://dashboard.stripe.com/" +
+                    (_vm.charge.livemode ? "" : "test/") +
+                    "payments/" +
+                    _vm.charge.payment_intent,
+                  target: "_blank"
+                }
+              },
+              [_vm._v(_vm._s(_vm.charge.payment_intent))]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex border-b border-40 -mx-6 px-6" }, [
+        _c("div", { staticClass: "w-1/4 py-4" }, [
+          _c("h4", { staticClass: "font-normal text-80" }, [_vm._v("Charge")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-3/4 py-4 break-words" }, [
+          _c("p", { staticClass: "text-90" }, [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href:
+                    "https://dashboard.stripe.com/" +
+                    (_vm.charge.livemode ? "" : "test/") +
+                    "payments/" +
+                    _vm.charge.id +
+                    "/review",
+                  target: "_blank"
+                }
+              },
+              [_vm._v(_vm._s(_vm.charge.id))]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex border-b border-40 -mx-6 px-6" }, [
+        _c("div", { staticClass: "w-1/4 py-4" }, [
+          _c("h4", { staticClass: "font-normal text-80" }, [_vm._v("Customer")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-3/4 py-4 break-words" }, [
+          _c("p", { staticClass: "text-90" }, [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href:
+                    "https://dashboard.stripe.com/" +
+                    (_vm.charge.livemode ? "" : "test/") +
+                    "customers/" +
+                    _vm.charge.customer,
+                  target: "_blank"
+                }
+              },
+              [_vm._v(_vm._s(_vm.charge.customer))]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex border-b border-40 -mx-6 px-6" }, [
+        _c("div", { staticClass: "w-1/4 py-4" }, [
+          _c("h4", { staticClass: "font-normal text-80" }, [_vm._v("Receipt")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-3/4 py-4 break-words" }, [
+          _c("p", { staticClass: "text-90" }, [
+            _c(
+              "a",
+              { attrs: { href: _vm.charge.receipt_url, target: "_blank" } },
+              [_vm._v("Receipt")]
+            )
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("detail-text-field", {
         attrs: { field: { name: "Amount", value: _vm.amount } }

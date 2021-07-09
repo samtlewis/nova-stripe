@@ -17,6 +17,11 @@
                     </th>
                     <th class="text-left">
                       <span class="inline-flex items-center">
+                         Customer
+                      </span>
+                    </th>
+                    <th class="text-left">
+                      <span class="inline-flex items-center">
                          Amount
                       </span>
                     </th>
@@ -37,6 +42,7 @@
                 <tbody v-for="charge in charges">
                 <tr>
                     <td>{{ charge.id }}</td>
+                    <td>{{ charge.customer }}</td>
                     <td>{{ charge.currency | money(charge.amount) }}</td>
                     <td>{{ charge.created | date }}</td>
                     <td>{{ charge.status }}</td>
